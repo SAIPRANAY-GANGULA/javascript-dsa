@@ -85,6 +85,13 @@ console.log(
     [1, 1, 1],
   ])
 );
+console.log(
+  setMatrixZeros2([
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1],
+  ])
+);
 
 console.log(
   setMatrixZeros1([
