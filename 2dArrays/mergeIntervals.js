@@ -1,3 +1,4 @@
+// https://youtu.be/IexN60k62jo?si=QOSvBHSWFdBl-pYt
 function mergeIntervals(intervals) {
   intervals.sort((a, b) => {
     if (a[0] !== b[0]) return a[0] - b[0];
@@ -10,7 +11,7 @@ function mergeIntervals(intervals) {
     const currentInterval = intervals[i];
     const lastInterval = ans[ans.length - 1];
     if (currentInterval[0] <= lastInterval[1]) {
-      const newInterval = [lastInterval[0], currentInterval[1]];
+      const newInterval = [lastInterval[0], Math.max(currentInterval[1], lastInterval[1])];
       ans.pop();
       ans.push(newInterval);
     } else {
@@ -23,20 +24,23 @@ function mergeIntervals(intervals) {
 
 console.log(
   mergeIntervals([
-    [1, 3],
-    [2, 5],
-    [5, 7],
     [9, 11],
+    [2, 5],
+    [1, 3],
+    [5, 7],
     [12, 13],
   ])
 );
 
 console.log(
   mergeIntervals([
-    [9, 11],
-    [2, 5],
     [1, 3],
-    [5, 7],
-    [12, 13],
+    [15, 18],
+    [2, 6],
+    [8, 10],
+    [8, 9],
+    [9, 11],
+    [2, 4],
+    [16, 17],
   ])
 );
