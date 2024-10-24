@@ -1,6 +1,6 @@
 function setMatrixZeros1(matrix) {
-  let m = matrix.length;
-  let n = matrix[0].length;
+  let n = matrix.length;
+  let m = matrix[0].length;
 
   let row = new Array(m).fill(false);
   let col = new Array(n).fill(false);
@@ -26,20 +26,20 @@ function setMatrixZeros1(matrix) {
 }
 
 function setMatrixZeros2(matrix) {
-  let m = matrix.length;
-  let n = matrix[0].length;
+  let n = matrix.length;
+  let m = matrix[0].length;
 
   let row0 = false;
   let col0 = false;
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < m; i++) {
     if (matrix[0][i] === 0) {
       row0 = true;
       break;
     }
   }
 
-  for (let j = 0; j < m; j++) {
+  for (let j = 0; j < n; j++) {
     if (matrix[j][0] === 0) {
       col0 = true;
       break;
@@ -64,13 +64,13 @@ function setMatrixZeros2(matrix) {
   }
 
   if (row0) {
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < m; i++) {
       matrix[0][i] = 0;
     }
   }
 
   if (col0) {
-    for (let i = 0; i < m; i++) {
+    for (let i = 0; i < n; i++) {
       matrix[i][0] = 0;
     }
   }
@@ -99,6 +99,7 @@ console.log(
     [1, 0, 1, 1],
     [1, 1, 0, 1],
     [0, 1, 1, 1],
+    [0, 1, 1, 1],
   ])
 );
 
@@ -107,6 +108,7 @@ console.log(
     [1, 1, 1, 1],
     [1, 0, 1, 1],
     [1, 1, 0, 1],
+    [0, 1, 1, 1],
     [0, 1, 1, 1],
   ])
 );
