@@ -50,10 +50,19 @@ sumN(5, 0);
 console.log("----------------------");
 
 function sumNFunctional(i) {
-  if (i < 0) {
+  if (i === 0) {
     return 0;
   }
   return sumNFunctional(i - 1) + i;
 }
 
 console.log(sumNFunctional(5));
+
+console.log("----------------------");
+
+function factorial(n) {
+  if (n === 1) return 1;
+  return factorial(n - 1) * n;
+}
+
+console.log(factorial(5));
