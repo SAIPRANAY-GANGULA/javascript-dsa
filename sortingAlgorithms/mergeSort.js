@@ -33,6 +33,8 @@ function mergeTwoSortedArrays(arr1, arr2) {
 console.log(mergeTwoSortedArrays([2, 5, 8, 9, 10, 20, 21], [2, 4, 7, 18]));
 console.log(mergeTwoSortedArrays([2, 4, 7, 18], [2, 5, 8, 9, 10, 20, 21]));
 
+console.log("------------------------------------------------------------");
+
 function merge(arr, start, mid, end) {
   let result = [];
   let i = start;
