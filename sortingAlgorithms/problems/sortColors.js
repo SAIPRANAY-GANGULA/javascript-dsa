@@ -1,3 +1,4 @@
+//using countingSort
 function sortColors(nums) {
   let n = nums.length;
   let countArray = new Array(3).fill(0);
@@ -24,4 +25,31 @@ function sortColors(nums) {
   return nums;
 }
 
+function sortColors1(nums) {
+  let n = nums.length;
+  let left = 0;
+  let right = n - 1;
+  let i = 0;
+
+  while (i <= right) {
+    if (nums[i] === 0) {
+      let temp = nums[left];
+      nums[left] = nums[i];
+      nums[i] = temp;
+      i++;
+      left++;
+    } else if (nums[i] === 2) {
+      let temp = nums[right];
+      nums[right] = nums[i];
+      nums[i] = temp;
+      right--;
+    } else {
+      i++;
+    }
+  }
+
+  return nums;
+}
+
 console.log(sortColors([0, 2, 1, 1, 2, 0, 2, 1, 2, 1, 0, 0]));
+console.log(sortColors1([0, 2, 1, 1, 2, 0, 2, 1, 2, 1, 0, 0]));
