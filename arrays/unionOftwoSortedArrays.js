@@ -49,5 +49,20 @@ function union(arr1, arr2) {
   return result;
 }
 
-console.log(union([1, 2, 3, 4, 5], [2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
-console.log(union([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 4, 4, 5, 11, 12])); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+// console.log(union([1, 2, 3, 4, 5], [2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
+// console.log(union([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 3, 4, 4, 5, 11, 12])); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+let missingNumber = function (nums) {
+    let N = nums.length;
+    let totalSum = (N * (N + 1)) / 2;
+    let currentSum = 0;
+
+    for (let i = 0; i < N; i++) {
+        currentSum += nums[i];
+    }
+    console.log(totalSum, currentSum)
+
+    return totalSum - currentSum - 1;
+};
+
+console.log(missingNumber([0,1]))
